@@ -1,0 +1,97 @@
+extends layout
+
+block content
+	link(rel="stylesheet", href="/stylesheets/searchmenu.css")
+	section(style="background:lightslategray;text-align:left")
+		div(style="padding-left:50px")
+			p.fp-left.fs-1.fw-n.fc-white 강좌목록
+			p.fp-left.fs-5.fw-l.fc-white Rivator에서 인기있는 강좌를 준비하였습니다.
+	section.flex-wrapper
+		form.search-menu(method="post", action="/lectures")
+			.menu-box.br-a
+				.fp-left.fs-3.fw-l 정렬
+				.radio-form.fs-3.fw-l
+					input#student(type="radio", name="status", value="3", checked)
+					label#student-label(for="student").fw-l.fs-5.fc-white.br-l 최신순
+					input#lecturer(type="radio", name="status", value="2")
+					label#student-label(for="lecturer").fw-l.fs-5.fc-white.br-r 인기순
+				br
+				.fp-left.fs-3.fw-l 직군
+				select(name="id")
+					option(value="C") C
+					option(value="Java") Java
+					option(value="Python") Python
+					option(value="JS") JS
+					option(value="C#") C#
+					option(value="C++") C++
+					option(value="아희") 아희
+					option(value="고") 고
+					option(value="Ruby") Ruby
+					option(value="Brain Fuck") Brain Fuck
+					option(value="Ook") Ook
+					option(value="JS Fuck") JS Fuck
+					option(value="Gne") Gne
+					option(value="허엉") 허엉
+				br
+				.fp-left.fs-3.fw-l 주소
+				select(name="id")
+					option(value="C") C
+					option(value="Java") Java
+					option(value="Python") Python
+					option(value="JS") JS
+					option(value="C#") C#
+					option(value="C++") C++
+					option(value="아희") 아희
+					option(value="고") 고
+					option(value="Ruby") Ruby
+					option(value="Brain Fuck") Brain Fuck
+					option(value="Ook") Ook
+					option(value="JS Fuck") JS Fuck
+					option(value="Gne") Gne
+					option(value="허엉") 허엉
+				br
+				br
+				button.btn-fill-green.fs-4.br-a(type="submit", style="width:100%") 검색
+		.contents
+			#pop-lectures.item-wrapper
+				- for(var i = 0; i < 3; i++)
+					a.item-class(href="#")
+						.tag.fc-white.fs-6 basic
+						.preview-image(style='background-image: url(/images/banner1.jpg)')
+						.preview-info
+							p.fp-left.fs-3.fw-n 웹프로그래밍 기초
+							p.fp-left.fc-gray.fw-l 김철수 강사
+							.star.fs-4
+								i.fa.fa-star.fc-orange(aria-hidden='true')
+								|  5.0
+							p.fp-right.fs-2.fw-bb 230,000
+			#pop-lectures.item-wrapper
+				- for(var i = 0; i < 3; i++)
+					a.item-class(href="#")
+						.tag.fc-white.fs-6 basic
+						.preview-image(style='background-image: url(/images/banner1.jpg)')
+						.preview-info
+							p.fp-left.fs-3.fw-n 웹프로그래밍 기초
+							p.fp-left.fc-gray.fw-l 김철수 강사
+							.star.fs-4
+								i.fa.fa-star.fc-orange(aria-hidden='true')
+								|  5.0
+							p.fp-right.fs-2.fw-bb 230,000
+			#counter.item-wrapper
+				a.page-button.fc-gray.fw-b.fs-5(href="#")
+					div
+						i.fa.fa-caret-left(aria-hidden="true")
+				.page-button.fc-gray.fw-b.fs-5
+					div ...
+				- for(var i = 0; i < 9; i++)
+					- if(i === 4)
+						.page-button.fc-gray.fw-b.fs-5.pb-active(href="#")
+							div #{i+1}
+					- else
+						a.page-button.fc-gray.fw-b.fs-5(href="#")
+							div #{i+1}
+				.page-button.fc-gray.fw-b.fs-5
+					div ...
+				a.page-button.fc-gray.fw-b.fs-5(href="#")
+					div
+						i.fa.fa-caret-right(aria-hidden="true")

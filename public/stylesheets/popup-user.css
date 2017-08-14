@@ -1,0 +1,67 @@
+#popup-profile {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+#popup-profile .popup-user {
+    width: 370px;
+    height: 570px;
+    background: white;
+    padding: 15px;
+    margin-top: calc((100vh - 570px) / 2);
+    border-radius: 10px;
+}
+#popup-profile .popup-user .user-image {
+    width: 340px;
+    height: 340px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 170px;
+}
+#popup-profile .popup-user .user-info {
+    margin-top: 25px;
+}
+#popup-profile .popup-user .user-info .info-button {
+    margin-top: 25px;
+}
+#popup-profile .popup-user .user-info a {
+    width: 100%;
+    margin-top: 10px;
+}
+#popup-profile #popup-close {
+    background-color: #14E4A2;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    border-radius: 20px;
+    border: 1px solid #14E4A2;
+    top: calc(((100vh - 570px) / 2) - 20px);
+    right: calc(((100vw - 370px) / 2) - 20px);
+}
+@media screen and (max-width: 1024px) {
+    #popup-profile .popup-user {
+        width: 250px;
+        height: 420px;
+        padding: 10px;
+        margin-top: calc((100vh - 420px) / 2);
+    }
+    #popup-profile .popup-user .user-image {
+        width: 230px;
+        height: 230px;
+    }
+    #popup-profile .popup-user .user-info {
+        margin-top: 10px;
+    }
+    #popup-profile .popup-user .user-info .info-button {
+        margin-top: 10px;
+    }
+    #popup-profile #popup-close {
+        top: calc(((100vh - 420px) / 2) - 20px);
+        right: calc(((100vw - 250px) / 2) - 20px);
+    }
+}

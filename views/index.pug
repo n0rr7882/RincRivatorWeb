@@ -1,0 +1,94 @@
+extends layout
+
+block content
+	link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css')
+	link(rel="stylesheet", href="/stylesheets/popup-teacher.css")
+	// Swiper
+	section.image-slider(style="background: orange")
+		//- .swiper-container
+		//- 	.swiper-front
+		//- 		h1 Hello, Rivator!
+		//- 		p Rivator은 여러분에게 1대 1로 학생과 강사를 연결해 주는 서비스입니다.
+		//- 		p 저희 서비스를 이용하여 최고의 교육을 누려보세요!
+		//- 	.swiper-wrapper
+		//- 		.swiper-slide(style='background-image: url(/images/banner1.jpg)')          
+		//- 		.swiper-slide(style='background-image: url(/images/banner1.jpg)')
+		//- 		.swiper-slide(style='background-image: url(/images/banner1.jpg)')
+		//- 		.swiper-slide(style='background-image: url(/images/banner1.jpg)')
+			// Add Pagination
+			.swiper-pagination
+		// Swiper JS
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js')
+		// Initialize Swiper
+		script(src='/javascripts/slider.js')
+	section
+		h1.fs-1.fw-n 인기강좌
+		p.fc-gray.fs-4.fw-l Rivator에서 인기있는 강좌를 소개합니다.
+		#pop-lectures.item-wrapper
+			- for(var i = 0; i < 4; i++)
+				a.item-class(href="#")
+					.tag.fc-white.fs-6 basic
+					.preview-image(style='background-image: url(/images/banner1.jpg)')
+					.preview-info
+						p.fp-left.fs-3.fw-b 웹프로그래밍 기초
+						p.fp-left.fc-gray.fw-l 김철수 강사
+						.star.fs-4
+							i.fa.fa-star.fc-orange(aria-hidden='true')
+							|  5.0
+						p.fp-right.fs-2.fw-bb 230,000
+		br
+		a(href="/courses").btn-green.fs-4 더보기
+	section(style="background:lightslategray")
+		div#rivator-introduction
+			p.fs-1.fw-n.fc-white 안녕하세요, Rivator입니다!
+			p.fs-5.fw-l.fc-white Rivator은 여러분에게 보다 양질의 강좌를 소개하기 위해
+				br
+				| 지금 이 시간에도 열심히 노력하고 있습니다.
+			br
+			br
+			a(href="#").btn-white.fs-4.fp-left 자세히 보기
+	section
+		h1.fs-1.fw-n 신규강좌
+		p.fc-gray.fs-4.fw-l 신규 강좌를 소개합니다.
+		#new-lectures.item-wrapper
+			- for(var i = 0; i < 4; i++)
+				a.item-class(href="#")
+					.tag.fc-white.fs-6 basic
+					.preview-image(style='background-image: url(/images/banner1.jpg)')
+					.preview-info
+						p.fp-left.fs-3.fw-n 웹프로그래밍 기초
+						p.fp-left.fc-gray.fw-l 김철수 강사
+						.star.fs-4
+							i.fa.fa-star.fc-orange(aria-hidden='true')
+							|  5.0
+						p.fp-right.fs-2.fw-bb 230,000
+		br
+		a(href="/courses").btn-green.fs-4 더보기
+	section
+		h1.fs-1.fw-n 인기강사
+		p.fc-gray.fs-4.fw-l Rivator에서 인기있는 강사님들을 소개합니다.
+		#popup-teacher(style="display:none")
+			button#popup-close.fc-white.fs-2 ✕
+			.popup-lecturer
+				.preview-image(style='background-image: url(/images/banner1.jpg)')
+				.preview-info
+					p#popup-name.fp-center.fs-1.fw-b 김철수
+					p#popup-major.fp-center.fs-5.fw-l.fc-gray 웹 프로그래밍
+					.info-button.fp-center
+						button.fs-5.btn-fill-green.bs-small.br-a 캘린더
+						button.fs-5.btn-fill-gray.bs-small.br-a 프로필
+		#pop-lecturers.item-wrapper
+			- for(var i = 0; i < 6; i++)
+				.item-lecturer(href="#")
+					.tag.fc-white.fs-6 basic
+					.preview-image(style='background-image: url(/images/banner1.jpg)')
+					.preview-info
+						p.fp-center.fs-3.fw-b 김철수
+						button.fp-center.fs-5.fw-l.fc-gray(onClick="getPopupTeacher('/images/banner1.jpg','김철수','basic')") 상세보기
+							|  
+							i.fa.fa-play(aria-hidden="true")
+		br
+		a(href="/teachers").btn-green.fs-4 더보기
+	script(src="/javascripts/popup-teacher.js")
+
+

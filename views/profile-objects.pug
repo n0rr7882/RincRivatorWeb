@@ -1,0 +1,28 @@
+extends layout-profile
+
+block content
+	section(style="background:#efefef")
+		.user-courses.item-wrapper
+			- for(var i = 0; i < 4; i++)
+				a.item-class(href="#")
+					.tag.fc-white.fs-6 basic
+					.preview-image(style='background-image: url(/images/banner1.jpg)')
+					.preview-info
+						p.fp-left.fs-3.fw-b 웹프로그래밍 기초
+						p.fp-left.fc-gray.fw-l 김철수 강사
+						button.fs-5.btn-fill-green.bs-small.br-a.p-right 더 보기
+						.star.fs-4
+							i.fa.fa-star.fc-orange(aria-hidden='true')
+							|  5.0
+		.user-courses.item-wrapper
+			- for(var i = 0; i < 4; i++)
+				a.item-class(href="#")
+					.tag.fc-white.fs-6 basic
+					.preview-image(style='background-image: url(/images/banner1.jpg)')
+					.preview-info
+						p.fp-left.fs-3.fw-b 웹프로그래밍 기초
+						p.fp-left.fc-gray.fw-l 김철수 강사
+						button.fs-5.btn-fill-green.bs-small.br-a.p-right 더 보기
+						.star.fs-4
+							i.fa.fa-star.fc-orange(aria-hidden='true')
+							|  5.0

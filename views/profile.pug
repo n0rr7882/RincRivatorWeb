@@ -1,0 +1,44 @@
+extends layout-profile
+
+block content
+	div(style="background-color:#efefef")
+		section.flex-wrapper
+			div
+				.item.i-small
+					.p-image.fp-center(style='background-image: url(/images/banner1.jpg)')
+					br
+					.fs-3.fw-b 김철수
+					.fs-6.fw-l.fc-gray C++
+				.item.i-small
+					.p-image.fp-center(style='background-image: url(/images/user-default.png)')
+					br
+					.fs-3.fw-b 계정 승격
+					.fs-6.fw-l.fc-gray 지금 계정을 승격시켜보세요!
+					br
+					a(href="#").btn-black.bs-small.fs-5.fw-b 더보기
+			.contents
+				.item.i-large.fp-left
+					.fs-3.fw-b 계정 정보
+					br
+					table.info-table
+						tbody.fs-4.fw-l
+							tr
+								td.no-break 아이디
+								td asdfasdfa
+							tr
+								td.no-break 비밀번호
+								td 변경하기
+							tr
+								td.no-break 이름
+								td 김철수
+							tr
+								td.no-break 관심과목
+								td C++
+							tr
+								td.no-break 지역
+								td 서울특별시 강남구 대나무숲로 81-234
+							tr
+								td.no-break 전화번호
+								td 010-1234-5678
+					br
+					a(href="#").btn-black.bs-small.fs-5.fw-b 정보수정

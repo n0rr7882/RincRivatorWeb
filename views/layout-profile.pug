@@ -1,0 +1,53 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		meta(http-equiv='X-UA-Compatible', content='ie=edge')
+		title= title
+		link(rel='stylesheet', href='/stylesheets/layout.css')
+		link(rel='stylesheet', href='/stylesheets/content.css')
+		link(rel='stylesheet', href='/stylesheets/profile.css')
+		link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+		script(src='//code.jquery.com/jquery.min.js')
+	body
+		nav
+			.wrapper
+				a.logo(href="/")
+					h1.fw-l.fs-0 Rivator
+				.search
+					form.wrap(action='/', method='get')
+						input(type='text', name='keywords', placeholder='검색어를 입력하세요').fw-l
+						button(type='submit') 검색
+					a.account(href="/login", style="background-image:url(/images/user-default.png)")
+			.menu
+				ul.fs-6.fc-gray
+					a(href='/profile/info')
+						- if(menu === 1)
+							li.active 프로필
+						- else
+							li 프로필
+					a(href='/profile/courses')
+						- if(menu === 2)
+							li.active 강좌관리
+						- else
+							li 강좌관리
+					a(href='/profile/homeworks')
+						- if(menu === 3)
+							li.active 숙제관리
+						- else
+							li 숙제관리
+					a(href='/profile/contests')
+						- if(menu === 4)
+							li.active 콘테스트
+						- else
+							li 콘테스트
+					a(href='/profile/projects')
+						- if(menu === 5)
+							li.active 프로젝트
+						- else
+							li 프로젝트
+		.container
+			block content
+		footer
+			p.fs-5.fw-l COPYRIGHT © R INC. ALL RIGHTS RESERVED

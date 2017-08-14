@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	.join-wrapper
+		form(enctype="multipart/form-data")#login-form.form-wrapper
+			.profile-wrapper
+				img.profile-image(src="/images/user-default.png")
+				br
+				br
+				br
+				p.fs-1.fw-b Rivator에 오신 것을
+					br
+					| 환영합니다!
+			.info-wrapper
+				h1.fs-1.fw-bb(style="display:inline") 회원 로그인
+				a.fs-4.fc-blue.fw-l(style="float:right;margin:13px", href="/join") 회원 등록
+				hr
+				input(type="text", name="userId", placeholder="아이디").fs-5.fw-l
+				input(type="password", name="userPw", placeholder="비밀번호").fs-5.fw-l
+				br
+				br
+				button#submit.btn-fill-green.fs-4.br-a(type="button", style="float:right") 로그인
+	script(src="/javascripts/login.js")

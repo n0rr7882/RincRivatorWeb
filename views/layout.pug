@@ -1,0 +1,54 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		meta(http-equiv='X-UA-Compatible', content='ie=edge')
+		title= title
+		link(rel='stylesheet', href='/stylesheets/layout.css')
+		link(rel='stylesheet', href='/stylesheets/content.css')
+		link(rel="stylesheet", href="/stylesheets/popup-user.css")
+		link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+		script(src='//code.jquery.com/jquery.min.js')
+	body
+		#popup-profile(style="display:none")
+			button#popup-close.fc-white.fs-2 ✕
+			.popup-user
+				.user-image(style="background-image:url(/images/user-default.png)")
+				.user-info
+					p#popup-name.fp-center.fs-1.fw-b 안녕하세요!
+					p#popup-major.fp-center.fs-5.fw-l.fc-gray 로그인해주세요.
+					.info-button.fp-center
+						a.fs-5.btn-fill-green.bs-small.br-a(href="/login") 로그인
+						a.fs-5.btn-fill-gray.bs-small.br-a(href="/join") 회원가입
+		nav
+			.wrapper
+				a.logo(href="/")
+					h1.fw-l.fs-0 Rivator
+				.search
+					form.wrap(action='/', method='get')
+						input(type='text', name='keywords', placeholder='검색어를 입력하세요').fw-l
+						button(type='submit') 검색
+					button.account(style="background-image:url(/images/user-default.png)", onClick="getPopupProfile('/images/user-default.png','안녕하세요!','로그인해주세요.')")
+			.menu
+				ul.fs-6.fc-gray
+					a(href='/courses')
+						- if(menu === 1)
+							li.active 강좌목록
+						- else
+							li 강좌목록
+					a(href='/teachers')
+						- if(menu === 2)
+							li.active 강사목록
+						- else
+							li 강사목록
+					a(href='/profile')
+						- if(menu === 3)
+							li.active 마이페이지
+						- else
+							li 마이페이지
+		script(src="/javascripts/popup-profile.js")
+		.container
+			block content
+		footer
+			p.fs-5.fw-l COPYRIGHT © R INC. ALL RIGHTS RESERVED

@@ -1,0 +1,54 @@
+extends layout
+
+block content
+	.join-wrapper
+		form(enctype="multipart/form-data")#join-form.form-wrapper
+			.profile-wrapper
+				img.profile-image(src="/images/user-default.png")
+				br
+				br
+				br
+				p.fs-1.fw-b 프로필 사진을
+					br
+					| 등록해보세요!
+				input(type="file", name="profileImage", id="profile", onchange="readURL(this);", accept="image/*").fs-5
+				br
+				label(for="profile").fw-l.fs-4.fc-white.br-a
+					i.fa.fa-file-image-o(aria-hidden="true")
+					|  프로필이미지
+			.info-wrapper
+				h1.fs-1.fw-bb(style="display:inline") Rivator 회원 등록
+				a.fs-4.fc-blue.fw-l(style="float:right;margin:13px", href="/login") 로그인
+				hr
+				.radio-form.fs-3.fw-l
+					input#student(type="radio", name="userStatus", value="3", checked)
+					label#student-label(for="student").fw-l.fs-4.fc-white.br-l 학생
+					input#lecturer(type="radio", name="userStatus", value="2")
+					label#student-label(for="lecturer").fw-l.fs-4.fc-white.br-r 강사
+				br
+				input(type="text", name="userId", placeholder="아이디 [6~20자 영문,숫자]").fs-5.fw-l
+				input(type="password", name="userPw", placeholder="비밀번호 [8~20자 영문 대소문자, 숫자, 특수기호 포함]").fs-5.fw-l
+				input(type="password", name="rePw", placeholder="비밀번호 재확인").fs-5.fw-l
+				br
+				br
+				input(type="text", name="userName", placeholder="이름 [20자 이내]").fs-5.fw-l
+				input(type="tel", name="phoneNumber", placeholder="전화번호 [ex)01012345678]").fs-5.fw-l
+				.local-wrapper
+					input(type="text", name="localCity", placeholder="시 [ex)서울시]").fs-5.fw-l
+					input(type="text", name="localArea", placeholder="구 [ex)서대문구]", style="margin:5px").fs-5.fw-l
+					input(type="text", name="localTown", placeholder="동 [ex)홍제동]").fs-5.fw-l
+				br
+				input(type="text", name="subject", placeholder="관심과목 [ex)웹개발]").fs-5.fw-l
+				input(type="file", name="portfolio", id="portfolio").fs-5.fw-l
+				br
+				label(for="portfolio").fw-l.fs-4.fc-white.br-a
+					i.fa.fa-file-o(aria-hidden="true")
+					|  포트폴리오
+				br
+				br
+				br
+				input#agree(type="checkbox", name="agree")
+				|  
+				label#agree-label.fw-l.fs-4.br-a(for="agree")  Rivator 약관 동의
+				button#submit.btn-fill-green.fs-4.br-a(type="button", style="float:right") 회원가입
+	script(src="/javascripts/join.js")
